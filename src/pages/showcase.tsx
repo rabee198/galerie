@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from 'next/router'
-import Image from 'next/image'
 import useSWR from 'swr'
 import { Nft } from '../types'
 import React from 'react'
@@ -33,7 +32,7 @@ export default function Showcase() {
   return (
     <main className='container mx-auto my-5'>
       <h2 className='my-5 text-2xl font-bold'>{query.address}</h2>
-      <section className='grid grid-cols-3 gap-4'>
+      <section className='grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2'>
         {data.map(nft => (
           <NFTCard nft={nft} key={nft.id} />
         ))}

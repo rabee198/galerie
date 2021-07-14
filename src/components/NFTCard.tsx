@@ -5,14 +5,14 @@ export const NFTCard = ({ nft }: { nft: Nft }) => {
   return (
     <article className='flex flex-col w-full overflow-hidden'>
       <div>
-        <h3 className='text-xl'>{nft.name ?? '...'}</h3>
+        <h3 className='text-sm text-center mt-2 p-1'>{nft.name ?? '...'}</h3>
       </div>
-      <div className='w-full h-[225px] rounded overflow-hidden shadow'>
+      <div className='flex justify-center w-full overflow-hidden align-middle rounded'>
         <a href={nft.permalink ?? '#'} target='_blank' rel='noreferrer'>
           <img
-            src={nft.image_url}
+            src={nft.image_preview_url ?? '#'}
             alt={nft.description ? nft.description : 'undefined'}
-            className='object-contain w-full h-auto rounded hover:brightness-75'
+            className='w-full h-auto rounded hover:brightness-75 shadow'
           />
         </a>
       </div>
